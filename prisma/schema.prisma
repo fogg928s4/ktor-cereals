@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("LOCAL_SQL_LITE_PATH")
+}
+
+model List {
+    id Int @id @default(autoincrement()) @unique
+    name String
+    items Int
+    type Int
+    color String
+}
+
+model Item {
+    id Int @id @unique @default(autoincrement())
+    title String
+    image String
+    color String
+}

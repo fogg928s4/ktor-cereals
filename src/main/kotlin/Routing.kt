@@ -11,8 +11,14 @@ fun Application.configureRouting() {
             call.respondText("Hello, Mom!")
         }
         staticResources("/static", "static")
+        // For json serialization
         get("/json/kotlinx-serialization") {
             call.respond(mapOf("hello" to "world"))
+        }
+
+        // Cereals route
+        get("/cereals") {
+            call.respond(mapOf("corn" to "flakes"))
         }
     }
 }
